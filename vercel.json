@@ -1,7 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "basePath": "/material-sistema-de-conteudo-inteligente",
   "headers": [
     {
       "source": "/(.*)",
@@ -34,11 +33,7 @@
   ],
   "rewrites": [
     {
-      "source": "/material-sistema-de-conteudo-inteligente",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/material-sistema-de-conteudo-inteligente/obrigado",
+      "source": "/obrigado",
       "destination": "/obrigado.html"
     }
   ]

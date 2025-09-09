@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "basePath": "/material-sistema-de-conteudo-inteligente",
   "headers": [
     {
       "source": "/(.*)",
@@ -29,6 +30,16 @@
       "source": "/lead_magnet_sistema_de_conteúdo_inteligente.html",
       "destination": "/",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/material-sistema-de-conteudo-inteligente",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/material-sistema-de-conteudo-inteligente/obrigado",
+      "destination": "/obrigado.html"
     }
   ]
 }

@@ -1,8 +1,8 @@
 <html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrendlyAI — Acesso Privado</title>
-    <meta name="description" content="Solicite acesso a um programa privado projetado para mapear padrões cognitivos e construir clareza duradoura.">
+    <title>Sistema de Conteúdo Inteligente — TrendlyAI</title>
+    <meta name="description" content="Baixe nosso guia completo sobre como gerar milhares de visualizações por semana com apenas 1 hora de dedicação semanal usando nosso sistema de conteúdo inteligente.">
     <link href="https://unpkg.com/@geist-ui/fonts/geist-sans.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -141,7 +141,7 @@
 
                                 <div class="animate-entry delay-7">
                                     <label class="flex items-start gap-3 mt-4">
-                                        <input type="checkbox" required="" class="mt-1 h-4 w-4 flex-shrink-0 rounded border-white/30 bg-transparent text-white accent-white focus:ring-white/50 focus:ring-offset-gray-950">
+                                        <input type="checkbox" name="terms" id="terms" required="" class="mt-1 h-4 w-4 flex-shrink-0 rounded border-white/30 bg-transparent text-white accent-white focus:ring-white/50 focus:ring-offset-gray-950">
                                         <span class="text-xs text-white/70 font-geist">Ao enviar, você concorda com nossa <a href="#" class="hover:text-white underline font-semibold">Política de Privacidade</a> e <a href="#" class="hover:text-white underline font-semibold">Termos de Serviço</a>.</span>
                                     </label>
                                 </div>
@@ -210,6 +210,13 @@
             
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
+                
+                // Validate terms checkbox
+                const termsCheckbox = document.getElementById('terms');
+                if (!termsCheckbox.checked) {
+                    alert('Por favor, aceite os termos e condições para continuar.');
+                    return;
+                }
                 
                 // Track form submission attempt
                 if (typeof posthog !== 'undefined') {

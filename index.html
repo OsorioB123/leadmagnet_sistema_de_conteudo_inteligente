@@ -96,6 +96,48 @@
             0%, 100% { opacity: 0.05; transform: scale(0.98); }
             50% { opacity: 0.1; transform: scale(1.02); }
         }
+        
+        /* Mobile-friendly checkbox styling */
+        @media (max-width: 768px) {
+            .checkbox-container {
+                min-width: 44px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .mobile-checkbox {
+                width: 20px;
+                height: 20px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                border-radius: 4px;
+                background: transparent;
+                position: relative;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+            .mobile-checkbox:checked {
+                background: white;
+                border-color: white;
+            }
+            .mobile-checkbox:checked::after {
+                content: '✓';
+                position: absolute;
+                top: -2px;
+                left: 2px;
+                color: #030712;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .mobile-checkbox:focus {
+                outline: none;
+                border-color: rgba(255, 255, 255, 0.8);
+                box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+            }
+        }
     </style>
 </head>
 <body class="antialiased"><div class="fixed top-0 w-full h-screen bg-cover bg-center -z-10" style="background-image: url(&quot;https://i.ibb.co/2YgCK9Jh/Chat-GPT-Image-8-de-set-de-2025-19-01-16.png?w=800&amp;q=80&quot;);"></div>
@@ -140,9 +182,11 @@
                                 </div>
 
                                 <div class="animate-entry delay-7">
-                                    <label class="flex items-start gap-3 mt-4">
-                                        <input type="checkbox" name="terms" id="terms" required="" class="mt-1 h-4 w-4 flex-shrink-0 rounded border-white/30 bg-transparent text-white accent-white focus:ring-white/50 focus:ring-offset-gray-950">
-                                        <span class="text-xs text-white/70 font-geist">Ao enviar, você concorda com nossa <a href="#" class="hover:text-white underline font-semibold">Política de Privacidade</a> e <a href="#" class="hover:text-white underline font-semibold">Termos de Serviço</a>.</span>
+                                    <label class="flex items-start gap-3 mt-4 cursor-pointer" for="terms">
+                                        <div class="checkbox-container relative flex items-center justify-center w-8 h-8 mt-0.5 md:w-6 md:h-6">
+                                            <input type="checkbox" name="terms" id="terms" required="" class="mobile-checkbox md:h-5 md:w-5 md:rounded md:border-2 md:border-white/30 md:bg-transparent md:text-white md:accent-white md:focus:ring-white/50 md:focus:ring-offset-gray-950 cursor-pointer">
+                                        </div>
+                                        <span class="text-xs text-white/70 font-geist select-none">Ao enviar, você concorda com nossa <a href="#" class="hover:text-white underline font-semibold">Política de Privacidade</a> e <a href="#" class="hover:text-white underline font-semibold">Termos de Serviço</a>.</span>
                                     </label>
                                 </div>
 
